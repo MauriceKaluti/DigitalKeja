@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/renttransaction",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\RentTransaction\\Providers\\RentTransactionServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\RentTransaction\\": ""
+        }
+    }
+}

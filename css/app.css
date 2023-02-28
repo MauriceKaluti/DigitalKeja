@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);.skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a, .skin-blue .sidebar-menu>li.menu-open>a {
+    background: #ff0101;
+    opacity: 0.6;
+}
+.nav-pills>li>a {
+    border-radius: 0;
+    border-top: 3px solid transparent;
+    color: #444;
+    background: #2befbe;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    margin-left: 0.5em;
+    border-radius: 23px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #333 !important;
+    border: 1px solid #979797;
+    background-color: #92f7dd;
+    background: linear-gradient(to bottom, #fff 0%, #2befbe 100%) !important;
+}
+
+

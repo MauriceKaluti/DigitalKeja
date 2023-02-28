@@ -1,0 +1,3 @@
+[27-Oct-2022 12:44:53 AFRICA/NAIROBI] PHP Fatal error:  Allowed memory size of 188743680 bytes exhausted (tried to allocate 16384 bytes) in /home/codekali/public_html/digitalkeja/keja/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 331
+[27-Oct-2022 12:45:23 AFRICA/NAIROBI] PHP Fatal error:  Allowed memory size of 188743680 bytes exhausted (tried to allocate 16384 bytes) in /home/codekali/public_html/digitalkeja/keja/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 327
+[03-Feb-2023 14:14:33 AFRICA/NAIROBI] PHP Fatal error:  Allowed memory size of 188743680 bytes exhausted (tried to allocate 20480 bytes) in /home/codekali/public_html/digitalkeja/keja/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 333

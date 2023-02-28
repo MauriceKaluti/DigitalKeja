@@ -1,0 +1,13 @@
+{
+    "name": "RentTransaction",
+    "alias": "rent-transaction",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\RentTransaction\\Providers\\RentTransactionServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

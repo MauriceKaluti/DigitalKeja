@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scrollpsy</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+<style type="text/css">
+  
+  html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.navigation {
+  width: 100%;
+  background-color: white;
+  height: 75px;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+.navigation ul li {
+  display: inline-block;
+  margin: 0 0 0 30px;
+  padding: 0;
+}
+
+.navigation ul li.active a {
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: inherit;
+}
+
+.navigation ul li.blue {
+  border-bottom-color: #0071c5;
+}
+
+.navigation ul li.green {
+  border-bottom-color: #c4d600;
+}
+
+.navigation ul li.orange {
+  border-bottom-color: #fc4c02;
+}
+
+.navigation ul li.yellow {
+  border-bottom-color: #f3d54e;
+}
+
+.navigation ul li a:link,
+.navigation ul li a:visited,
+.navigation ul li a:active,
+.navigation ul li a:hover,
+.navigation ul li a:focus {
+  color: #333;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+
+.top-page {
+  margin-top: 75px;
+}
+
+.page {
+  min-height: 500px;
+}
+
+.page.blue {
+  background-color: #0071c5;
+}
+
+.page.green {
+  background-color: #c4d600;
+}
+
+.page.orange {
+  background-color: #fc4c02;
+}
+
+.page.yellow {
+  background-color: #f3d54e;
+}
+</style>
+</head>
+<body>
+
+<nav class="navigation fixed" id="nav">
+  <ul>
+    <li class="blue active"><a href="#page1">Page 1</a></li>
+    <li class="green"><a href="#page2">Page 2</a></li>
+    <li class="orange"><a href="#page3">Page 3</a></li>
+    <li class="yellow"><a href="#page4">Page 4</a></li>
+  </ul>
+</nav>
+
+<div class="page blue top-page" id="page1">
+  <h1>Page 1</h1>
+</div>
+
+<div class="page green" id="page2">
+  <h1>Page 2</h1>
+</div>
+
+<div class="page orange" id="page3">
+  <h1>Page 3</h1>
+</div>
+
+<div class="page yellow" id="page4">
+  <h1>Page 4</h1>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<script>
+  
+  $("#nav").scrollspy({ offset: -75 });
+</script>
+</html>
