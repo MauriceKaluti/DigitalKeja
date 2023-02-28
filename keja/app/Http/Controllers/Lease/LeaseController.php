@@ -66,13 +66,15 @@ class LeaseController extends Controller
 
       if ($request->has('room_id'))
         {
-
-           $rrid = $request->has('room_id'); 
-    $rum = DB::table("rooms")->where( 'id', '=', $rrid )->first(); 
-             
+       $rrid = $request->room_id; 
+       $rum = Room::where( 'id', '=', $rrid )->first(); 
         }
+            // dd($rum->lease);
+        
+        if (isset($rum->lease)) {
 
-
+            return redirect(route('room_browse'))->with('success','Room Already Leased');
+        }
 
         if ($request->has('tenant_id'))
         {

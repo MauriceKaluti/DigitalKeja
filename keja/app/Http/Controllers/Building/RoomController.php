@@ -56,13 +56,20 @@ class RoomController extends Controller
             return  back();
         }
 
-        if (request()->has('building_id'))
+        if (request()->has('building'))
         {
-            request()->request->add(['id' =>  request('building_id')]);
-        }
-        request()->request->add(['active' =>  true]);
+            request()->request->add(['id' =>  request('building')]);
+
+        $buildings = Building::where('id','=',$request->building)->get();
+
+        }else{
 
         $buildings = $this->building->filter();
+
+        }
+
+        request()->request->add(['active' =>  true]);
+
 
         unset($request['id']);
 

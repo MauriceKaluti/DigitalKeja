@@ -19,6 +19,11 @@
       <a href="{{ url('building/room/list') }}" class="btn btn-primary"><i class="fa fa-home"></i> All Rooms </a>
    </li>
 </ul>
-@include('livewire.room')
+
+<div class="card shadow-lg keja-round">
+   <div class="card-body">
+      @include('livewire.room')
+   </div>
+</div>
 </div>
 @endsection

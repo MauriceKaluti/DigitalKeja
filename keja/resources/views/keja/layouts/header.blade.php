@@ -2,7 +2,10 @@
    .table{
    color: #747794!important;
    }
+.dataTables_wrapper .dataTables_filter input {
+   color: #747794!important;
 
+}
    select { 
    color: #747794!important;
    -webkit-text-fill-color: #747794!important; 
@@ -16,6 +19,19 @@
 
       border: 0px transparent!important;
 
+   }
+
+   .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+
+      background-color: #ffaf00;
+
+   }
+
+   .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+      color: #fff;
+   }
+   .nav-tabs .nav-link {
+      border-radius: 30px;
    }
  </style>
 

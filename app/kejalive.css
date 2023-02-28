@@ -220,13 +220,13 @@
    transform: scale(1.06);
    border: 2px solid #ffaf00!important;
    transition: transform .3s ease;
-   background-color: #f4f4f4!important;
+   background-color: #000!important;
    }
    .keja-popup-card:active  {
    transform: scale(0.9);
    transition: transform .3s ease;
    border: 2px solid #ffaf00!important;
-   background-color: #f4f4f4!important;
+   background-color: #000!important;
    }
    .btn-primary {
    padding: 10px;

@@ -255,7 +255,7 @@ textarea:invalid {
 
 .bg-danger,
 .badge-danger {
-  background-color: #ffaf00 !important; }
+  background-color: red!important; }
 
 .bg-warning,
 .badge-warning {

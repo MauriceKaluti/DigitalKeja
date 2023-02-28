@@ -72,19 +72,19 @@
                         </span></p> -->
                       <a class="btn btn-secondary btn-sm mb-3" title="Detach Tenant Forever" href="{{route('unLease',$room->lease->tenant->id)}}"><i class="fa fa-trash"></i> Detach Tenant</a>
                      @endif
-                     <p class="text-white"><span style="font-weight: bold;">Current Month:</span> Expected: {{$required_rent}} <span style="font-weight: bold;">Paid: {{$mpesads}}</span> </p>
+                     <p class="text-white"> <small>Current Month: Expected: {{$required_rent}} Paid: {{$mpesads}}</small> </p>
                      @if($mpesads == $required_rent)
-                     <span style="background-color: green;margin-bottom: 30px;" class="badge keja-round badge-secondary">Cleared</span>
+                     <span class="badge keja-round badge-secondary bg-secondary mb-3">Cleared</span>
                      @else
-                     <span class="badge keja-round badge-danger" style="font-weight: bold;margin-bottom: 30px; background-color: #FF0000;">Blc: {{$required_rent - $mpesads}}</span>
+                     <span class="badge keja-round badge-primary bg-primary">Blc: {{$required_rent - $mpesads}}</span>
                      @endif
                      @else
-                     <span style="background-color: red; margin-bottom: 30px;" class="badge keja-round badge-secondary">Vacant</span>
+                     <p><span class="badge keja-round badge-danger bg-danger mb-3">Vacant</span></p>
                      @if(! isset($room->lease->is_active))
                      @if($room->is_vacant == 0)
-                     <p><span class="badge keja-round" style="background-color: green; "><a style="color: #fff;" title="Activate Room" href="{{route('activateRoom',$room->id)}}"><i class="fa fa fa-power-off"></i> Activate Room</a></span></p>
+                     <a class="btn btn-outline-secondary btn-sm" title="Activate Room First, To Make It Available For Leasing" href="{{route('activateRoom',$room->id)}}"><i class="fa fa fa-power-off"></i> Activate Room</a>
                      @else
-                     <p><span class="badge keja-round" style="background-color: green; "><a style="color: #fff;" title="Activate Room"><i class="fa fa-check-circle"></i> Room Active</a></span></p>
+                     <p><span title="Room Active For Leasing" class="badge keja-round"><i class="fa fa-check-circle"></i> Room Active</span></p>
                      @can('add_lease_room')
                       <a class="btn btn-primary btn-sm" href="{{ route('lease_create',['room_id' => $room->id]) }}" > <i class="fa fa-money"></i> Lease Room</a> 
                      @endcan

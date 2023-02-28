@@ -3,30 +3,36 @@
 @section('title',$building->name.' Details')
 @section('content')
 <div class="container-fluid">
-   <ul class="nav nav-pills mb-2  mr-1"  style="margin-bottom: 20px">
+   <ul class="nav nav-pills mb-2">
+    @can('edit_building')
+   <li>
+      <a class="btn btn-outline-primary" href="{{ url('accounts/building' ,['building' => $building->id]) }}"><i class="fa fa-building"></i> 3D Rooms
+      </a>
+   </li>
+   @endcan
    @can('edit_building')
-   <li class="nav-item ml-2">
+   <li>
       <a class="btn btn-outline-primary" href="{{ route('building_edit' ,['building' => $building->id]) }}"><i class="fa fa-edit"></i> Edit building
       </a>
    </li>
    @endcan
    @can('delete_building')
-   <li class="nav-item ml-2">
+   <li>
       <a class="btn btn-outline-primary" href="{{ route('building_delete' ,['building' => $building->id]) }}"><i class="fa fa-trash"></i> Delete building
       </a>
    </li>
    @endcan
-   <li class="">
+   <li>
       <a href="{{ url('accounts/opt_buildings') }}" class="btn btn-outline-primary btn-rounded"><i class="fa fa-arrow-left"></i> Back to
       Buildings <i class="fa fa-university"></i></a>
    </li>
-   <li class="">
+   <li>
       <a href="{{ url('accounts/buildings') }}" class="btn btn-outline-primary btn-rounded"><i class="fa fa-home"></i> Explore Buildings </a>
    </li>
-   <li class="">
+   <li>
       <a href="{{ route('building_browse') }}" class="btn btn-outline-primary btn-rounded"> : <i class="fa fa-user"></i> Occupation Ratio </a>
    </li>
-   <li class="">
+   <li>
       <a href="{{ url('building/create') }}" class="btn btn-outline-primary btn-rounded"><i class="fa fa-plus"></i> Create
       Building</a>
    </li>

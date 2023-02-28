@@ -11,13 +11,10 @@ use App\DB\Building\Room;
 use App\User;
  
 ?>
-
+@extends('keja.layouts.data_tables')
 @extends('layouts.master')
 @section('title','Building Current Payment Status')
 @section('content')
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
- 
-
 
     <div class=" divider">
     </div>
@@ -30,7 +27,7 @@ use App\User;
  ?>
    <div  class="table-responsive">
 
-    <table class="table display table-striped payment-report-table" id="example" >
+    <table class="row-border stripe table" id="kejaDisplay" style="width:100%">
         <thead>
         <tr>
             <th>Id</th>
@@ -40,7 +37,6 @@ use App\User;
             <th>Breakdown</th>            
          
             <th>Action</th>
-            <th>Action2</th>
 
         </tr>
         </thead>
@@ -52,7 +48,7 @@ use App\User;
                 <tr>
                     <td width="10%">{{$landlord_building->id}}</td>
                     @if(!empty($landlord_building->landlord->name))
-                    <td><span style="background-color: #FF00D0;" class="badge badge-secondary"><i class="fa fa-university"></i> {{$landlord_building->name}} </span> / <span class="badge badge-secondary">{{$landlord_building->landlord->name}}</span></td>
+                    <td><span style="background-color: #FF00D0;" class="badge badge-warning"><i class="fa fa-university"></i> {{$landlord_building->name}} </span> / <span class="badge badge-warning">{{$landlord_building->landlord->name}}</span></td>
                     @else
                     <td></td>
                     @endif
@@ -87,45 +83,71 @@ use App\User;
                         ?>
 
                         <p style="color: orange; font-weight: bold;"><i style="font-size: 15px;" class="fa fa-list"></i> Building Breakdown</p>
-                        <p style="color: green; font-weight: bold;">B/Rent: {{$expected_rent_utilities}}</p>
+                    <div class="row">
+                    <div class="col-md-4">
+                       <p style="color: green; font-weight: bold;">B/Rent: {{$expected_rent_utilities}}</p>
+                   </div>
+                    <div class="col-md-4">
                         <p style="color: silver; font-weight: bold;">B/Commission: {{$amount_after_commission}}</p> 
+                   </div>
 
+                    <div class="col-md-4">
                         <p style="color: #ff00d0; font-weight: bold;">B/Deductions: {{$building_deduction}}</p> 
+                   </div>
     
+                    <div class="col-md-4">
                         <p style="color: purple; font-weight: bold;">B/Payout: {{$building_payout}}</p>
+                    </div>
  
+                   </div>
 
                    </td>
     
                     <td> 
 
-                        <a style="margin-bottom: 10px;" class="btn btn-primary" href="{{route('one.building',$landlord_building->id)}}"><i class="fa fa-eye"></i> Check Out</a>
-                        <br> 
-                        <a style="margin-bottom: 10px;" class="btn btn-primary" href="{{route('one.expe',$landlord_building->id)}}"><i class="fa fa-eye"></i> Create B/Expense</a> 
-                        <br>
-                        <a style="margin-bottom: 10px;" class="btn btn-primary" href="{{route('one.inc',$landlord_building->id)}}"><i class="fa fa-eye"></i> Create B/Income</a> 
-                    <br>
+                    <div class="row">
+                    <div class="col-6">
+                        <a style="margin-bottom: 10px;" class="btn btn-primary w-100 btn-sm" href="{{route('one.building',$landlord_building->id)}}"><i class="fa fa-eye"></i> Check Out</a>
+                       </div>
+                    <div class="col-6">
+                        <a style="margin-bottom: 10px;" class="btn btn-primary w-100 btn-sm" href="{{route('one.expe',$landlord_building->id)}}"><i class="fa fa-eye"></i> Expenses</a> 
+                       </div>
+                       </div>
+
+
+                    <div class="row">
+                        <div class="col-6">
+                        <a style="margin-bottom: 10px;" class="btn btn-primary w-100 btn-sm" href="{{route('one.inc',$landlord_building->id)}}"><i class="fa fa-eye"></i> Income</a> 
+                       </div>
                    
+                        <div class="col-6">
                          @can('read_building')
-                         <a class="btn btn-primary" href="{{ route('building_read',['building' => $landlord_building->id]) }}"><i class="fa fa-user"></i> Check Tenants</a>
-                    @endcan
-                   
-                    </td>
-                    <td> @can('browse_rooms')
-                         <a style="margin-bottom: 10px;" class="btn btn-primary" href="{{ route('room_browse',['building_id' => $landlord_building->id]) }}"><i class="fa fa-home"></i> Check Rooms</a>
+                         <a class="btn btn-primary w-100 btn-sm" href="{{ route('building_read',['building' => $landlord_building->id]) }}"><i class="fa fa-users"></i> Tenants</a>
+                        @endcan
+                       </div>
+                    </div>
+                   @can('browse_rooms')
+                         <a style="margin-bottom: 10px;" class="btn btn-primary w-100 btn-sm" href="{{ route('room_browse',['building_id' => $landlord_building->id]) }}"><i class="fa fa-home"></i> Check Rooms</a>
                     @endcan
                     <br>
                      @can('add_rooms')
-                        <a style="margin-bottom: 10px;" class="btn btn-primary"  href="{{ route('room_create',['building' => $landlord_building->id]) }}"><i class="fa fa-plus"></i> {{ __('Create New Room') }}</a>
+                        <a style="margin-bottom: 10px;" class="btn btn-primary w-100 btn-sm"  href="{{ route('room_create',['building' => $landlord_building->id]) }}"><i class="fa fa-plus"></i> {{ __('Create New Room') }}</a>
                     @endcan
-                    <br>
+                  
+                        <div class="row">
+                        <div class="col-6">
                     @can('edit_building')
-                        <a style="margin-bottom: 10px;" class="btn btn-primary"  href="{{ route('building_edit',['building' => $landlord_building->id]) }}"><i class="fa fa-edit"></i> {{ __('Update Building Info') }}</a>
+                        <a style="margin-bottom: 10px;" class="btn btn-primary w-100 btn-sm"  href="{{ route('building_edit',['building' => $landlord_building->id]) }}"><i class="fa fa-edit"></i> {{ __('Update') }}</a>
                     @endcan
-                    <br>
+                    </div>
+                        <div class="col-6">
                     @can('delete_building')
-                        <a style="margin-bottom: 10px;" class="btn btn-primary"  href="{{ route('building_delete',['building' => $landlord_building->id]) }}"><i class="fa fa-trash"></i> {{ __('Delete Building') }}</a>
-                    @endcan</td>
+                        <a style="margin-bottom: 10px;" class="btn btn-primary w-100 btn-sm"  href="{{ route('building_delete',['building' => $landlord_building->id]) }}"><i class="fa fa-trash"></i> {{ __('Delete') }}</a>
+                    @endcan
+                    </div>
+                    </div>
+                    </td>
+
                     
                 </tr>
               
@@ -142,7 +164,6 @@ use App\User;
             <th>Breakdown</th>            
          
             <th>Action</th>
-            <th>Action 2</th>
 
         </tr>
         </tfoot>
@@ -158,10 +179,10 @@ use App\User;
 @endsection
 
 @section('js')
-    @include('layouts._datatable')
+    
     @include('layouts._datepicker')
     <script>
-        $('table').DataTable()
+    
         $('input.date').datepicker()
     </script>
  <script type="text/javascript">
