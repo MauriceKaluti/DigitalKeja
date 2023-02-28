@@ -148,11 +148,11 @@
                      <a href="{{route('landlord_browse')}}">
                         <div class="card keja-popup-card h-100 shadow-lg keja-round">
                            <div class="card-body text-center">
-                              <i class="fa fa-user-tie mb-3 fa-2x keja-card-icon"></i>
-                              <h6 class="card-title text-warning keja-bold">No Of Landlords</h6>
+                              <i class="fa fa-user-tie mb-3 fa-2x keja-card-icon text-warning"></i>
+                              <h6 class="card-title keja-bold">No Of Landlords</h6>
                               <span class="keja-card-count text-site"><small>Total Landlords:  {{$landlords}}</small></span>
                               <div class="mt-2">
-                                 <button type="button" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View All</button>
+                                 <button type="button" class="btn btn-outline-secondary"><i class="fa fa-eye"></i> View All</button>
                               </div>
                            </div>
                         </div>
@@ -162,11 +162,11 @@
                      <a href="{{route('building_browse')}}">
                         <div class="card keja-popup-card h-100 shadow-lg keja-round">
                            <div class="card-body text-center">
-                              <i class="fa fa-building mb-3 fa-2x keja-card-icon"></i>
-                              <h6 class="card-title text-warning keja-bold">Building / Units</h6>
+                              <i class="fa fa-building mb-3 fa-2x keja-card-icon text-warning"></i>
+                              <h6 class="card-title keja-bold">Building / Units</h6>
                               <span class="keja-card-count text-site"><small>{{$buildings  .'/'.  $units}}</small></span>
                               <div class="mt-2">
-                                 <button type="button" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View All</button>
+                                 <button type="button" class="btn btn-outline-secondary"><i class="fa fa-eye"></i> View All</button>
                               </div>
                            </div>
                         </div>
@@ -176,11 +176,11 @@
                      <a href="{{route('tenant_browse')}}">
                         <div class="card keja-popup-card h-100 shadow-lg keja-round">
                            <div class="card-body text-center">
-                              <i class="fa fa-group mb-3 fa-2x keja-card-icon"></i>
-                              <h6 class="card-title text-warning keja-bold">Tenants</h6>
+                              <i class="fa fa-group mb-3 fa-2x keja-card-icon text-warning"></i>
+                              <h6 class="card-title keja-bold">Tenants</h6>
                               <span class="keja-card-count text-site"><small>{{$tenants}}</small></span>
                               <div class="mt-2">
-                                 <button type="button" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View All</button>
+                                 <button type="button" class="btn btn-outline-secondary"><i class="fa fa-eye"></i> View All</button>
                               </div>
                            </div>
                         </div>
@@ -193,11 +193,11 @@
                         ])}}">
                         <div class="card keja-popup-card h-100 shadow-lg keja-round">
                            <div class="card-body text-center">
-                              <i class="fa fa-exchange mb-3 fa-2x keja-card-icon"></i>
-                              <h6 class="card-title text-warning keja-bold">Rent Collection Ratio</h6>
+                              <i class="fa fa-exchange mb-3 fa-2x keja-card-icon text-warning"></i>
+                              <h6 class="card-title keja-bold">Rent Collection Ratio</h6>
                               <span class="keja-card-count text-site"><small>{{number_format($rent_ratio , 2)}}%</small></span>
                               <div class="mt-2">
-                                 <button type="button" class="btn btn-outline-primary"><i class="fa fa-eye"></i> Collection Report</button>
+                                 <button type="button" class="btn btn-outline-secondary"><i class="fa fa-eye"></i> Collection Report</button>
                               </div>
                            </div>
                         </div>
@@ -207,11 +207,11 @@
                      <a href="{{ url('building/browse') }}">
                         <div class="card keja-popup-card h-100 shadow-lg keja-round">
                            <div class="card-body text-center">
-                              <i class="fa fa-percent mb-3 fa-2x keja-card-icon"></i>
-                              <h6 class="card-title text-warning keja-bold">Occupation Ratio</h6>
+                              <i class="fa fa-percent mb-3 fa-2x keja-card-icon text-warning"></i>
+                              <h6 class="card-title keja-bold">Occupation Ratio</h6>
                               <span class="keja-card-count text-site"><small>{{number_format($occupancyRatio , 2)}}%</small></span>
                               <div class="mt-2">
-                                 <button type="button" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View Ratio</button>
+                                 <button type="button" class="btn btn-outline-secondary"><i class="fa fa-eye"></i> View Ratio</button>
                               </div>
                            </div>
                         </div>
@@ -221,11 +221,11 @@
                      <a href="{{route('room_browse')}}">
                         <div class="card keja-popup-card h-100 shadow-lg keja-round">
                            <div class="card-body text-center">
-                              <i class="fa fa-toggle-on mb-3 fa-2x keja-card-icon"></i>
-                              <h6 class="card-title text-warning keja-bold">Total Active Leases</h6>
+                              <i class="fa fa-toggle-on mb-3 fa-2x keja-card-icon text-warning"></i>
+                              <h6 class="card-title keja-bold">Total Active Leases</h6>
                               <span class="keja-card-count text-site"><small>{{$leaseCount}}</small></span>
                               <div class="mt-2">
-                                 <button type="button" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View All</button>
+                                 <button type="button" class="btn btn-outline-secondary"><i class="fa fa-eye"></i> View All</button>
                               </div>
                            </div>
                         </div>
@@ -235,11 +235,11 @@
                      <a href="{{route('tenant_browse')}}">
                         <div class="card keja-popup-card h-100 shadow-lg keja-round">
                            <div class="card-body text-center">
-                              <i class="fa fa-mobile mb-3 fa-2x keja-card-icon"></i>
-                              <h6 class="card-title text-warning keja-bold">Total Mpesa Payments</h6>
+                              <i class="fa fa-mobile mb-3 fa-2x keja-card-icon text-warning"></i>
+                              <h6 class="card-title keja-bold">Total Mpesa Payments</h6>
                               <span class="keja-card-count text-site"><small>{{$mpesaspaidRentCount}}</small></span>
                               <div class="mt-2">
-                                 <button type="button" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View All</button>
+                                 <button type="button" class="btn btn-outline-secondary"><i class="fa fa-eye"></i> View All</button>
                               </div>
                            </div>
                         </div>
@@ -249,11 +249,11 @@
                      <a href="{{url('accounts/receipt_reports')}}">
                         <div class="card keja-popup-card h-100 shadow-lg keja-round">
                            <div class="card-body text-center">
-                              <i class="fa fa-money mb-3 fa-2x keja-card-icon"></i>
-                              <h6 class="card-title text-warning keja-bold">Total Manual Payments</h6>
+                              <i class="fa fa-money mb-3 fa-2x keja-card-icon text-warning"></i>
+                              <h6 class="card-title keja-bold">Total Manual Payments</h6>
                               <span class="keja-card-count text-site"><small>{{$manualspaidRentCount}}</small></span>
                               <div class="mt-2">
-                                 <button type="button" class="btn btn-outline-primary"><i class="fa fa-eye"></i> View All</button>
+                                 <button type="button" class="btn btn-outline-secondary"><i class="fa fa-eye"></i> View All</button>
                               </div>
                            </div>
                         </div>
